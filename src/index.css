@@ -7,7 +7,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  @apply bg-neutral-950 overflow-x-hidden
+  @apply bg-neutral-900 overflow-x-hidden
 }
 
 @theme {

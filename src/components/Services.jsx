@@ -1,30 +1,37 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import graphic from "../assets/graphic_2_11zon.jpg";
+import web from "../assets/web_4_11zon.jpg";
+import video from "../assets/video_3_11zon.jpg";
+import brand from "../assets/brand_strategy_1_11zon.jpg";
 const cards = [
   {
     id: 1,
     title: " Graphic Design",
     content:
       "We transform ideas into stunning visuals — from logos and brand identities to posters, flyers, and scroll-stopping social media creatives. Every design is crafted to resonate with your audience and elevate your brand’s visual appeal.",
+    images: graphic,
   },
   {
     id: 2,
     title: "Website Development",
     content:
       "We build clean, high-performing, and responsive websites tailored to your business goals — whether it’s a landing page, portfolio, or a complete digital storefront. Optimized for speed, UX, and mobile-first performance.",
+    images: web,
   },
   {
     id: 3,
     title: "Video Editing",
     content:
       "From Instagram reels to high-end promotional films, we produce cinematic and engaging videos that tell your story, highlight your brand, and connect with your audience emotionally and visually.",
+    images: video,
   },
   {
     id: 4,
     title: "Brand Strategy",
     content:
       "We help shape your brand's voice and identity through strategic planning, storytelling, and cohesive visuals. From positioning to messaging, we make sure your brand stands out in a crowded market.",
+    images: brand,
   },
 ];
 
@@ -41,34 +48,47 @@ export default function ProcessAccordion() {
         const isActive = card.id === activeId;
 
         return (
-          // Motion applied only on md and above
           <motion.div
             key={card.id}
             layout={typeof window !== "undefined" && window.innerWidth >= 768}
             transition={{ layout: { duration: 0.5, ease: "easeInOut" } }}
             onClick={() => toggleCard(card.id)}
             className={`
-              relative cursor-pointer rounded-xl overflow-hidden flex flex-col justify-between items-start
-              h-[40vh]
-              ${
-                isActive
-                  ? "bg-[#FFFC00] text-black"
-                  : "bg-black text-white hover:bg-neutral-800"
-              }
-              w-[90%] md:p-8 p-4
-              ${isActive ? "md:w-[40%]" : "md:w-[18%]"}
-              transition-all duration-300 ease-in-out md:h-[60vh]
-            `}
+        relative cursor-pointer rounded-xl overflow-hidden flex flex-col justify-between items-start
+        h-[40vh]
+        ${
+          isActive
+            ? "bg-[#FFFC00] text-black"
+            : "bg-black text-white hover:bg-neutral-800"
+        }
+        w-[90%] md:p-8 p-4
+        ${isActive ? "md:w-[40%]" : "md:w-[18%]"}
+        transition-all duration-300 ease-in-out md:h-[60vh]
+      `}
           >
+            {/* Background Image for Inactive Card */}
+            {!isActive && (
+              <motion.img
+                src={card.images}
+                alt={card.title}
+                className="absolute top-0 left-0 w-full h-full object-cover opacity-40 z-0"
+              />
+            )}
+
+            {/* Overlay to darken background image */}
+            {!isActive && (
+              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-10"></div>
+            )}
+
             {/* Title */}
             <motion.div
               layout={typeof window !== "undefined" && window.innerWidth >= 768}
-              className="md:text-2xl text-3xl font-clash tracking-wider font-semibold"
+              className="md:text-2xl text-3xl font-clash tracking-wider font-semibold relative z-20"
             >
               {card.title}
             </motion.div>
 
-            {/* Animate content only on large screens */}
+            {/* Content on Active */}
             <AnimatePresence>
               {isActive && (
                 <motion.div
@@ -77,18 +97,18 @@ export default function ProcessAccordion() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-4 text-base md:text-xl font-outfit leading-relaxed text-left"
+                  className="mt-4 text-base md:text-xl font-outfit leading-relaxed text-left relative z-20"
                 >
                   {card.content}
                 </motion.div>
               )}
             </AnimatePresence>
 
-            {/* Plus icon for inactive */}
+            {/* Plus Icon */}
             {!isActive && (
               <motion.div
                 layout
-                className="absolute bottom-4 left-4 text-2xl"
+                className="absolute bottom-4 left-4 text-2xl text-white z-20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >

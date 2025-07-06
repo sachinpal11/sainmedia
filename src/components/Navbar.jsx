@@ -38,7 +38,7 @@ function Navbar() {
       <div
         className={`
           flex-col md:flex-row md:flex  transition-all ease-in-out  md:space-x-3 sm:space-x-2 text-white
-          absolute md:static top-full left-0 w-full md:w-auto bg-neutral-800 md:bg-transparent shadow-lg md:shadow-none
+          absolute md:static top-full left-0 w-full md:w-auto bg-neutral-700 md:bg-transparent shadow-lg md:shadow-none
           ${menuOpen ? "flex" : "hidden"} md:flex
           z-20
         `}

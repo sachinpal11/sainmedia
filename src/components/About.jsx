@@ -11,50 +11,59 @@ export default function LetterScrollReveal({ title, description }) {
   useLayoutEffect(() => {
     const element = textRef.current;
 
-    // Ensure element exists and GSAP is available
     if (!element || typeof window === "undefined" || !gsap) return;
 
-    const text = element.innerText;
-    element.innerText = ""; // Clear existing fallback text
+    // Clear original content
+    element.innerHTML = "";
 
-    // Create and style span for each character
-    text.split("").forEach((char) => {
-      const span = document.createElement("span");
-      span.innerText = char === " " ? "\u00A0" : char;
-      span.style.display = "inline-block";
-      span.style.opacity = "0";
-      span.style.transform = "translateY(20px)";
-      element.appendChild(span);
+    // Split text into words
+    const words = originalText.split(" ");
+
+    words.forEach((word, wordIndex) => {
+      const wordSpan = document.createElement("span");
+      wordSpan.style.display = "inline-block";
+      wordSpan.style.marginRight = "0.4em"; // spacing between words
+      wordSpan.style.whiteSpace = "nowrap";
+
+      // Split word into letters
+      word.split("").forEach((char) => {
+        const letterSpan = document.createElement("span");
+        letterSpan.innerText = char;
+        letterSpan.style.display = "inline-block";
+        letterSpan.style.color = "#3f3f3f"; // dark start
+        wordSpan.appendChild(letterSpan);
+      });
+
+      element.appendChild(wordSpan);
     });
 
-    // Animate with GSAP
-    gsap.to(element.children, {
+    // Animate all letter spans (not word spans)
+    const allLetters = element.querySelectorAll("span span"); // inner spans only
+
+    gsap.to(allLetters, {
       scrollTrigger: {
         trigger: element,
-        start: "top 100%",
+        start: "top 90%",
         end: "top 40%",
         scrub: 1,
       },
-      opacity: 1,
-      y: 0,
+      color: "#ffffff",
       stagger: 0.03,
-      duration: 0.3,
+      duration: 0.5,
       ease: "power3.out",
     });
   }, []);
 
   return (
-    <div className=" text-white xl:h-[20vh] -mt-20 min-h-screen xl:justify-evenly justify-center gap-10 w-full md:mt-40 md:-mb-40 pt-20 flex flex-col md:flex-row items-start p-10">
+    <div className="text-white xl:h-[20vh] -mt-20 min-h-screen xl:justify-evenly justify-center gap-10 w-full md:mt-40 md:-mb-40 pt-20 flex flex-col md:flex-row items-start p-10">
       <span className="xl:text-7xl md:text-5xl text-nowrap text-4xl font-medium relative font-clash text-[#FFFC00]">
         <div className="w-full h-[2px] -bottom-2 bg-white absolute"></div>
         {title}
       </span>
       <p
         ref={textRef}
-        className="md:text-xl xl:text-3xl text-xl  font-outfit font-light leading-snug max-w-4xl tracking-wide"
-      >
-        {originalText}
-      </p>
+        className="md:text-xl xl:text-3xl text-xl text-left font-outfit font-light leading-snug max-w-4xl tracking-wide"
+      ></p>
     </div>
   );
 }
