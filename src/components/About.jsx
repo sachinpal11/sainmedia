@@ -32,8 +32,8 @@ export default function LetterScrollReveal() {
     gsap.to(element.children, {
       scrollTrigger: {
         trigger: element,
-        start: "top 95%",
-        end: "bottom 50%",
+        start: "top 120%",
+        end: "top 70%",
         scrub: 1,
       },
       opacity: 1,
@@ -45,7 +45,7 @@ export default function LetterScrollReveal() {
   }, []);
 
   return (
-    <div className="bg-neutral-950 text-white xl:h-[20vh] min-h-screen xl:justify-evenly justify-center gap-10 w-full md:mt-40 md:-mb-40 pt-20 flex flex-col md:flex-row items-start p-10">
+    <div className=" text-white xl:h-[20vh] -mt-20 min-h-screen xl:justify-evenly justify-center gap-10 w-full md:mt-40 md:-mb-40 pt-20 flex flex-col md:flex-row items-start p-10">
       <span className="xl:text-7xl md:text-5xl text-nowrap text-5xl font-medium relative font-clash text-[#FFFC00]">
         <div className="w-full h-[2px] -bottom-2 bg-white absolute"></div>
         About Us
