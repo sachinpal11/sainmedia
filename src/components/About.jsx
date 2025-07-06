@@ -33,7 +33,7 @@ export default function LetterScrollReveal() {
       scrollTrigger: {
         trigger: element,
         start: "top 120%",
-        end: "top 70%",
+        end: "top 40%",
         scrub: 1,
       },
       opacity: 1,
