@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  background: #1e272e;
+  font-family: sans-serif;
+}
+
+.scroll-container {
+  position: relative;
+}
+
+.scroll-card {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
