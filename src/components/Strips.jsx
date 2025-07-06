@@ -5,7 +5,7 @@ function Strips() {
     "SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN ";
 
   return (
-    <div className="relative w-full -mt-100 h-[100vh] overflow-hidden font-clash font-medium flex flex-col justify-center space-y-4">
+    <div className="relative w-full -mt-100 md:-mb-50 -mb-70 h-[100vh] overflow-hidden font-clash font-medium flex flex-col justify-center space-y-4">
       <style jsx>{`
         @keyframes scroll-left {
           0% {
