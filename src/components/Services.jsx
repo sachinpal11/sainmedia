@@ -4,27 +4,27 @@ import { motion, AnimatePresence } from "framer-motion";
 const cards = [
   {
     id: 1,
-    title: "Define",
+    title: " Graphic Design",
     content:
-      "We begin by understanding your brand, goals, and audience to craft a tailored strategy that aligns with your vision.",
+      "We transform ideas into stunning visuals — from logos and brand identities to posters, flyers, and scroll-stopping social media creatives. Every design is crafted to resonate with your audience and elevate your brand’s visual appeal.",
   },
   {
     id: 2,
-    title: "Design",
+    title: "Website Development",
     content:
-      "Our creative team brings your ideas to life through bold, user-centered designs that captivate and communicate.",
+      "We build clean, high-performing, and responsive websites tailored to your business goals — whether it’s a landing page, portfolio, or a complete digital storefront. Optimized for speed, UX, and mobile-first performance.",
   },
   {
     id: 3,
-    title: "Digital",
+    title: "Video Editing",
     content:
-      "From interactive websites to social campaigns, we engineer digital solutions that drive engagement and results.",
+      "From Instagram reels to high-end promotional films, we produce cinematic and engaging videos that tell your story, highlight your brand, and connect with your audience emotionally and visually.",
   },
   {
     id: 4,
-    title: "Develop",
+    title: "Brand Strategy",
     content:
-      "We turn designs into powerful experiences through clean code, responsive layouts, and seamless performance.",
+      "We help shape your brand's voice and identity through strategic planning, storytelling, and cohesive visuals. From positioning to messaging, we make sure your brand stands out in a crowded market.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function ProcessAccordion() {
             onClick={() => toggleCard(card.id)}
             className={`
               relative cursor-pointer rounded-xl overflow-hidden flex flex-col justify-between items-start
-              h-[30vh]
+              h-[40vh]
               ${
                 isActive
                   ? "bg-[#FFFC00] text-black"
