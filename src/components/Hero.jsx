@@ -11,7 +11,7 @@ function Hero() {
         <PiStarFourFill className="motion-safe:animate-spin" />
         Avaliable for new projects
       </span>
-      <h1 className="font-clash z-10 tracking-wide text-center md:scale-100 scale-105 text-3xl sm:text-5xl md:text-7xl xl:text-8xl text-black font-medium">
+      <h1 className="font-clash p-4 z-10 tracking-wide text-center md:scale-100 scale-105 text-3xl sm:text-5xl md:text-7xl xl:text-8xl text-black font-medium">
         Ignite Your Brand with
         <br className="md:flex hidden" /> Lightning Speed
       </h1>
