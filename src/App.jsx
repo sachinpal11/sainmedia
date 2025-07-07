@@ -38,20 +38,10 @@ function App() {
       />
       <Strips />
       <div id="Services"></div>
-      <AboutSection
-        title={"What We Offer"}
-        description={
-          "Sain Agency’s end-to-end services give us a full view of the consumer journey, helping us create bold, data-driven designs, websites, and videos that deliver real results."
-        }
-      />
+      <AboutSection title={"What We Offer"} description={""} />
       <ProcessAccordion />
       <div id="Projects"></div>
-      <AboutSection
-        title={"Our Projects"}
-        description={
-          "From bold brand identities to high-performance websites and cinematic videos — every project at Sain Media & Developers is crafted with purpose. We blend creativity with strategy to deliver work that not only looks stunning but drives real-world results."
-        }
-      />
+      <AboutSection title={"Our Projects"} description={""} />
       <OurProjects />
       <div id="contact"></div>
       <BookNow />
