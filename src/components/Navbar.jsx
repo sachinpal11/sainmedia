@@ -76,7 +76,7 @@ function Navbar() {
           Project
         </a>
         <a
-          href="#"
+          href="#contact"
           className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           Contact

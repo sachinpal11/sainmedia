@@ -1,16 +1,23 @@
+import { Phone } from "lucide-react";
 import React from "react";
 import { InlineWidget } from "react-calendly";
 
 function BookNow() {
+  const bookCall = () => {
+    window.open("https://calendly.com/sachinraja709/new-meeting");
+  };
   return (
-    <section className="bg-neutral-800 border-[#FFFC00] border-b-2 border-r-2 p-10 pb-0 mt-20 rounded-4xl">
-      <h1 className="md:text-6xl text-3xl mb-10 text-white font-clash font-medium">
+    <section className=" flex flex-col items-center p-10 mt-20 sm:rounded-4xl">
+      <h1 className="md:text-6xl text-center text-3xl mb-10 text-[#fffb00] font-clash font-medium">
         Book Your Session Now
-        <div className="w-full h-1 mt-3 rounded-3xl bg-[#FFFC00]"></div>
+        <div className="w-full h-1 mt-3 rounded-3xl bg-white"></div>
       </h1>
-      <div className="w-full h-[700px] my-10">
-        <InlineWidget url="https://calendly.com/sachinraja709/new-meeting" />
-      </div>
+      <button
+        className="text-xl hover:bg-[#fffc00] flex items-center font-outfit font-medium px-6 gap-2 py-3 rounded-xl bg-white "
+        onClick={bookCall}
+      >
+        <Phone /> Book A Free Call
+      </button>
     </section>
   );
 }

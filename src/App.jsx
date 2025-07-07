@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import LocomotiveScroll from "locomotive-scroll";
 import Lenis from "lenis";
+const BookNow = lazy(() => import("./components/BookNow"));
 const AboutSection = lazy(() => import("./components/About"));
 const Strips = lazy(() => import("./components/Strips"));
 const ProcessAccordion = lazy(() => import("./components/Services"));
@@ -50,6 +51,8 @@ function App() {
         }
       />
       <OurProjects />
+      <div id="contact"></div>
+      <BookNow />
       <Footer />
       {/* </Suspense> */}
     </div>
