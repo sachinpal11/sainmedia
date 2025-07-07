@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import LocomotiveScroll from "locomotive-scroll";
 import Lenis from "lenis";
+import { Analytics } from "@vercel/analytics/next";
 const BookNow = lazy(() => import("./components/BookNow"));
 const AboutSection = lazy(() => import("./components/About"));
 const Strips = lazy(() => import("./components/Strips"));
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="w-full scroll-container flex flex-col items-center">
+      <Analytics />
       <Navbar />
       <Hero />
       {/* <Suspense fallback={<div>Loading...</div>}> */}
