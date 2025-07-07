@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo2.png";
 import { Phone } from "lucide";
+import { motion } from "motion/react";
 import { FaPhoneAlt } from "react-icons/fa";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-neutral-800/40 shadow-sm backdrop-blur-2xl flex font-outfit text-lg sticky z-999 mt-5 rounded-lg top-10 items-center justify-between px-4 py-0 sm:py-1 w-[80%] md:w-[95%] xl:w-[85%] mx-auto">
+    <motion.nav
+      initial={{ y: -80, opacity: 0, filter: "blur(10px)" }}
+      animate={{ y: 5, opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="bg-neutral-800/40 shadow-sm backdrop-blur-2xl flex font-outfit text-lg sticky z-999 mt-5 rounded-lg top-10 items-center justify-between px-4 py-0 sm:py-1 w-[80%] md:w-[95%] xl:w-[85%] mx-auto"
+    >
       {/* Logo */}
       <div className="font-medium flex items-center justify-center text-xl sm:text-2xl xl:text-3xl text-neutral-100 font-clash tracking-wider">
         <img src={Logo} width={60} className="md:scale-100 scale-80" alt="" />
@@ -83,7 +89,7 @@ function Navbar() {
       <button className="bg-white items-center gap-2 text-nowrap text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#FFFC00] hover:text-black  hidden md:flex">
         <FaPhoneAlt /> Book a Call
       </button>
-    </nav>
+    </motion.nav>
   );
 }
 

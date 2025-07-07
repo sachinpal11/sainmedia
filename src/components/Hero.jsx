@@ -3,10 +3,16 @@ import { PiStarFourFill } from "react-icons/pi";
 import AnimatedButton from "./HoverButton";
 import { ArrowBigLeftDashIcon } from "lucide-react";
 import { GoArrowUpRight } from "react-icons/go";
+import { motion } from "framer-motion";
 
 function Hero() {
   return (
-    <section className="w-[95%] -z-1 h-fit pt-5 pb-15 sm:mt-15 mt-15 flex-col rounded-t-3xl from-75% bg-gradient-to-b from-[#fffb00ee] to-transparent flex items-center gap-5 md:gap-10">
+    <motion.section
+      initial={{ y: 80, opacity: 0, filter: "blur(10px)" }}
+      animate={{ y: 35, opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="w-[95%] -z-1 h-fit pt-5 pb-15 sm:mt-15 mt-15 flex-col rounded-t-3xl from-75% bg-gradient-to-b from-[#fffb00ee] to-transparent flex items-center gap-5 md:gap-10"
+    >
       <span className="uppercase items-center gap-2 font-outfit text-sm md:text-sm font-medium mt-5 md:mt-10 px-5 py-3 bg-neutral-900 flex h-fit text-neutral-100 rounded-xl">
         <PiStarFourFill className="motion-safe:animate-spin" />
         Avaliable for new projects
@@ -26,7 +32,7 @@ function Hero() {
           View Work <GoArrowUpRight />
         </button>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -70,7 +70,8 @@ export default function ProcessAccordion() {
             {!isActive && (
               <motion.img
                 src={card.images}
-                alt={card.title}
+                alt={`${card.title} SAIN Media and developers`}
+                loading="lazy"
                 className="absolute top-0 left-0 w-full h-full object-cover opacity-40 z-0"
               />
             )}
@@ -83,7 +84,7 @@ export default function ProcessAccordion() {
             {/* Title */}
             <motion.div
               layout={typeof window !== "undefined" && window.innerWidth >= 768}
-              className="md:text-2xl text-3xl font-clash tracking-wider font-semibold relative z-20"
+              className="md:text-2xl text-xl font-clash tracking-wider font-semibold relative z-20"
             >
               {card.title}
             </motion.div>

@@ -6,6 +6,7 @@ import AboutSection from "./components/About";
 import Strips from "./components/Strips";
 import ProcessAccordion from "./components/Services";
 import OurProjects from "./components/Projects";
+import BookNow from "./components/BookNow";
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
@@ -34,6 +35,7 @@ function App() {
         }
       />
       <OurProjects />
+      <BookNow />
       <div className="w-full h-screen"></div>
     </div>
   );

@@ -1,23 +1,26 @@
 import { useState, useRef } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "motion/react";
 import clsx from "clsx";
-
+import graphicMockup from "../assets/metro wall cerave poster.png";
+import clothing from "../assets/clothing.jpg";
+import Photography from "../assets/photography.jpg";
+import dpsports from "../assets/dpsports.jpg";
 const projects = [
   {
-    name: "Brand Identity for Auro",
-    image: "/images/auro.jpg",
+    name: "CeraVe FaceWash",
+    image: graphicMockup,
   },
   {
-    name: "SaaS Landing Page",
-    image: "/images/saas.jpg",
+    name: "Clothing Website",
+    image: clothing,
   },
   {
-    name: "Reel Series - AI Campaign",
-    image: "/images/reels.jpg",
+    name: "Photography Website",
+    image: Photography,
   },
   {
-    name: "E-Commerce UI/UX",
-    image: "/images/ecommerce.jpg",
+    name: "Dp sports Website",
+    image: dpsports,
   },
 ];
 export default function OurProjects() {
@@ -66,7 +69,8 @@ export default function OurProjects() {
             <div className="mt-4 md:hidden">
               <img
                 src={project.image}
-                alt={project.name}
+                alt={`${project.name} SAIN Media and developers`}
+                loading="lazy"
                 className="w-full bg-black h-88 object-cover rounded-lg"
               />
             </div>
@@ -75,16 +79,19 @@ export default function OurProjects() {
       </div>
 
       {/* Image preview for desktop */}
-      <motion.img
-        src={hovered !== null ? projects[hovered].image : ""}
-        alt="Preview"
-        className={clsx(
-          "hidden md:block pointer-events-none fixed top-0 bg-black border-black border-3 left-0 w-120 h-76 object-cover rounded-lg shadow-xl z-40",
-          hovered !== null ? "opacity-100 scale-100" : "opacity-0 scale-90"
-        )}
-        style={{ x: springX, y: springY }}
-        transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      />
+      {hovered !== null && (
+        <motion.img
+          src={projects[hovered].image}
+          alt="Preview"
+          className={clsx(
+            "hidden md:block pointer-events-none fixed top-0 bg-black border-black border-3 left-0 w-120 h-76 object-cover rounded-lg shadow-xl z-40",
+            "opacity-100 scale-100"
+          )}
+          style={{ x: springX, y: springY }}
+          transition={{ type: "spring", stiffness: 120, damping: 20 }}
+          loading="lazy"
+        />
+      )}
     </div>
   );
 }

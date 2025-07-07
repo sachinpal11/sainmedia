@@ -1,48 +1,31 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Strips() {
   const text =
     "SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN SAIN ";
 
   return (
-    <div className="relative w-full -mt-100 md:-mb-50 -mb-70 h-[100vh] overflow-hidden font-clash font-medium flex flex-col justify-center space-y-4">
-      <style jsx>{`
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0%) rotate(6deg);
-          }
-          100% {
-            transform: translateX(-100%) rotate(6deg);
-          }
-        }
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(-100%) rotate(-6deg);
-          }
-          100% {
-            transform: translateX(0%) rotate(-6deg);
-          }
-        }
-      `}</style>
+    <div className="relative w-full -mt-[100px] md:-mb-[50px] -mb-[70px] h-[60vh] overflow-hidden font-clash font-medium flex flex-col justify-center space-y-4">
       {/* First Strip - Moving Left */}
-      <div
+      <motion.div
         className="whitespace-nowrap bg-[#FFFC00] text-black font-bold tracking-widest text-4xl md:text-7xl"
-        style={{
-          animation: "scroll-left 10s linear infinite",
-        }}
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+        style={{ rotate: "6deg" }}
       >
         <span className="bg-[#FFFC00]">{text.repeat(10)}</span>
-      </div>
+      </motion.div>
 
       {/* Second Strip - Moving Right */}
-      <div
-        className="whitespace-nowrap bg-[#FF6B6B] text-white font-bold tracking-widest text-4xl md:text-7xl"
-        style={{
-          animation: "scroll-right 10s linear infinite",
-        }}
+      <motion.div
+        className="whitespace-nowrap bg-[#FFFC00] text-white font-bold tracking-widest text-4xl md:text-7xl"
+        animate={{ x: ["-100%", "0%"] }}
+        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+        style={{ rotate: "-6deg" }}
       >
         <span className="bg-[#FFFC00] text-black">{text.repeat(10)}</span>
-      </div>
+      </motion.div>
     </div>
   );
 }
