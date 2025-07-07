@@ -51,25 +51,25 @@ function Navbar() {
         </a>
         <a
           href="#"
-          className="px-3 py-2 relative text-neutral-300 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-neutral-500 after:transition-all after:duration-300 hover:after:w-full"
+          className="px-3 py-2 relative text-neutral-300 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           About
         </a>
         <a
           href="#"
-          className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-neutral-500 after:transition-all after:duration-300 hover:after:w-full"
+          className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           Services
         </a>
         <a
           href="#"
-          className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-neutral-500 after:transition-all after:duration-300 hover:after:w-full"
+          className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
-          Blog
+          Project
         </a>
         <a
           href="#"
-          className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-neutral-500 after:transition-all after:duration-300 hover:after:w-full"
+          className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           Contact
         </a>

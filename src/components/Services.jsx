@@ -108,7 +108,7 @@ export default function ProcessAccordion() {
             {!isActive && (
               <motion.div
                 layout
-                className="absolute bottom-4 left-4 text-2xl text-white z-20"
+                className="absolute bottom-4 left-4 text-2xl text-black w-10 h-10 rounded-full font-bold flex items-center justify-center bg-[#FFFC00] z-20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >

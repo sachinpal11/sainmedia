@@ -5,6 +5,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import AboutSection from "./components/About";
 import Strips from "./components/Strips";
 import ProcessAccordion from "./components/Services";
+import OurProjects from "./components/Projects";
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
@@ -26,7 +27,13 @@ function App() {
         }
       />
       <ProcessAccordion />
-
+      <AboutSection
+        title={"Our Projects"}
+        description={
+          "From bold brand identities to high-performance websites and cinematic videos — every project at Sain Media & Developers is crafted with purpose. We blend creativity with strategy to deliver work that not only looks stunning but drives real-world results."
+        }
+      />
+      <OurProjects />
       <div className="w-full h-screen"></div>
     </div>
   );
