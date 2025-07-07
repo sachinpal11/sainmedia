@@ -11,12 +11,18 @@ const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   useEffect(() => {
-    const scroll = new LocomotiveScroll({ smooth: true });
+    const scrollEl = document.querySelector(".scroll-container");
+
+    const scroll = new LocomotiveScroll({
+      el: scrollEl,
+      smooth: true,
+    });
+
     return () => scroll.destroy();
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full scroll-container flex flex-col items-center">
       <Navbar />
       <Hero />
       <Suspense fallback={<div>Loading...</div>}>
