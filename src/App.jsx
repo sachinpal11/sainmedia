@@ -2,7 +2,7 @@ import React, { Suspense, lazy, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import LocomotiveScroll from "locomotive-scroll";
-
+import Lenis from "lenis";
 const AboutSection = lazy(() => import("./components/About"));
 const Strips = lazy(() => import("./components/Strips"));
 const ProcessAccordion = lazy(() => import("./components/Services"));
@@ -10,16 +10,16 @@ const OurProjects = lazy(() => import("./components/Projects"));
 const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
-  useEffect(() => {
-    const scrollEl = document.querySelector(".scroll-container");
+  // useEffect(() => {
+  //   const scrollEl = document.querySelector(".scroll-container");
 
-    const scroll = new LocomotiveScroll({
-      el: scrollEl,
-      smooth: true,
-    });
+  //   const scroll = new LocomotiveScroll({
+  //     el: scrollEl,
+  //     smooth: true,
+  //   });
 
-    return () => scroll.destroy();
-  }, []);
+  //   return () => scroll.destroy();
+  // }, []);
 
   return (
     <div className="w-full scroll-container flex flex-col items-center">
