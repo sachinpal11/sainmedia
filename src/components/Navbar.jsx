@@ -10,7 +10,7 @@ function Navbar() {
     <motion.nav
       initial={{ y: -80, opacity: 0, filter: "blur(10px)" }}
       animate={{ y: 5, opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className="bg-neutral-800/40 shadow-sm backdrop-blur-2xl flex font-outfit text-lg sticky z-999 mt-5 rounded-lg top-10 items-center justify-between px-4 py-0 sm:py-1 w-[80%] md:w-[95%] xl:w-[85%] mx-auto"
     >
       {/* Logo */}

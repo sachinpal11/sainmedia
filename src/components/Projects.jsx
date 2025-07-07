@@ -61,7 +61,7 @@ export default function OurProjects() {
             onMouseMove={handleMouseMove}
             transition={{ duration: 0.3 }}
           >
-            <span className="text-4xl md:text-7xl font-medium tracking-wide">
+            <span className="text-3xl md:text-7xl font-medium tracking-wide">
               {project.name}
             </span>
 
