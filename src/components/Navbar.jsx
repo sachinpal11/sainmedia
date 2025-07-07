@@ -5,7 +5,9 @@ import { motion } from "motion/react";
 import { FaPhoneAlt } from "react-icons/fa";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const bookCall = () => {
+    window.open("https://calendly.com/sachinraja709/new-meeting");
+  };
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0, filter: "blur(10px)" }}
@@ -50,25 +52,25 @@ function Navbar() {
         `}
       >
         <a
-          href="#"
+          href="#Home"
           className="px-3 py-2 font-semibold text-white relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           Home
         </a>
         <a
-          href="#"
+          href="#About"
           className="px-3 py-2 relative text-neutral-300 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           About
         </a>
         <a
-          href="#"
+          href="#Services"
           className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           Services
         </a>
         <a
-          href="#"
+          href="#Projects"
           className="px-3 py-2 relative text-neutral-300  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#fffb05] after:transition-all after:duration-300 hover:after:w-full"
         >
           Project
@@ -81,12 +83,18 @@ function Navbar() {
         </a>
 
         {/* Book a Call Button (mobile) */}
-        <button className="bg-white flex items-center justify-center gap-2 text-neutral-800 font-semibold px-4 py-2 rounded hover:bg-neutral-200 mt-2 md:hidden">
+        <button
+          className="bg-white flex items-center justify-center gap-2 text-neutral-800 font-semibold px-4 py-2 rounded hover:bg-neutral-200 mt-2 md:hidden"
+          onClick={bookCall}
+        >
           <FaPhoneAlt /> Book a Call
         </button>
       </div>
       {/* Book a Call Button (desktop) */}
-      <button className="bg-white items-center gap-2 text-nowrap text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#FFFC00] hover:text-black  hidden md:flex">
+      <button
+        className="bg-white items-center gap-2 text-nowrap text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#FFFC00] hover:text-black  hidden md:flex"
+        onClick={bookCall}
+      >
         <FaPhoneAlt /> Book a Call
       </button>
     </motion.nav>

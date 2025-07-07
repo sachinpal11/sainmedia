@@ -32,11 +32,11 @@ function Footer() {
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left font-outfit text-sm sm:text-base text-black font-medium ">
         <div className="flex items-center  gap-2">
           <FiPhone className="text-lg" />
-          <span>+91 98765 43210</span>
+          <span>+91 72103 97258</span>
         </div>
         <div className="flex items-center gap-2">
           <FiPhone className="text-lg" />
-          <span>+91 91234 56789</span>
+          <span>+91 93109 61517</span>
         </div>
         <div className="flex items-center gap-2">
           <FaInstagram className="text-lg" />

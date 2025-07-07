@@ -10,45 +10,48 @@ const OurProjects = lazy(() => import("./components/Projects"));
 const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
-  // useEffect(() => {
-  //   const scrollEl = document.querySelector(".scroll-container");
+  useEffect(() => {
+    const scrollEl = document.querySelector(".scroll-container");
 
-  //   const scroll = new LocomotiveScroll({
-  //     el: scrollEl,
-  //     smooth: true,
-  //   });
+    const scroll = new LocomotiveScroll({
+      el: scrollEl,
+      smooth: true,
+    });
 
-  //   return () => scroll.destroy();
-  // }, []);
+    return () => scroll.destroy();
+  }, []);
 
   return (
     <div className="w-full scroll-container flex flex-col items-center">
       <Navbar />
       <Hero />
-      <Suspense fallback={<div>Loading...</div>}>
-        <AboutSection
-          title={"About Us"}
-          description={
-            "Sain Agency is a creative powerhouse specializing in graphic design, website development, and video editing. We craft bold, impactful digital experiences that elevate brands and drive real engagement across all platforms."
-          }
-        />
-        <Strips />
-        <AboutSection
-          title={"What We Offer"}
-          description={
-            "Sain Agency’s end-to-end services give us a full view of the consumer journey, helping us create bold, data-driven designs, websites, and videos that deliver real results."
-          }
-        />
-        <ProcessAccordion />
-        <AboutSection
-          title={"Our Projects"}
-          description={
-            "From bold brand identities to high-performance websites and cinematic videos — every project at Sain Media & Developers is crafted with purpose. We blend creativity with strategy to deliver work that not only looks stunning but drives real-world results."
-          }
-        />
-        <OurProjects />
-        <Footer />
-      </Suspense>
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
+      <div id="About"></div>
+      <AboutSection
+        title={"About Us"}
+        description={
+          "Sain Agency is a creative powerhouse specializing in graphic design, website development, and video editing. We craft bold, impactful digital experiences that elevate brands and drive real engagement across all platforms."
+        }
+      />
+      <Strips />
+      <div id="Services"></div>
+      <AboutSection
+        title={"What We Offer"}
+        description={
+          "Sain Agency’s end-to-end services give us a full view of the consumer journey, helping us create bold, data-driven designs, websites, and videos that deliver real results."
+        }
+      />
+      <ProcessAccordion />
+      <div id="Projects"></div>
+      <AboutSection
+        title={"Our Projects"}
+        description={
+          "From bold brand identities to high-performance websites and cinematic videos — every project at Sain Media & Developers is crafted with purpose. We blend creativity with strategy to deliver work that not only looks stunning but drives real-world results."
+        }
+      />
+      <OurProjects />
+      <Footer />
+      {/* </Suspense> */}
     </div>
   );
 }
