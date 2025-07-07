@@ -43,7 +43,7 @@ export default function ProcessAccordion() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row -mt-50 xl:-mt-70 items-center md:items-stretch justify-center gap-2 w-full py-4">
+    <div className="flex flex-col md:flex-row -mt-50 xl:-mt-100 items-center md:items-stretch justify-center gap-2 w-full py-4">
       {cards.map((card) => {
         const isActive = card.id === activeId;
 

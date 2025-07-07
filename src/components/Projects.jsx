@@ -47,7 +47,7 @@ export default function OurProjects() {
   };
 
   return (
-    <div className="relative w-full -mt-60 text-white py-20 px-6 overflow-hidden">
+    <div className="relative w-full sm:-mt-100 -mt-80  text-white py-20 px-6 overflow-hidden">
       <div className="flex flex-col relative z-10">
         {projects.map((project, index) => (
           <motion.div

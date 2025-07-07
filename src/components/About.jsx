@@ -55,7 +55,7 @@ export default function LetterScrollReveal({ title, description }) {
   }, []);
 
   return (
-    <div className="text-white xl:h-[20vh] -mt-20 min-h-screen xl:justify-start sm:gap-30 xl:ml-20 justify-center gap-10 w-full md:mt-40 md:-mb-40 pt-20 flex flex-col md:flex-row items-start p-10">
+    <div className="text-white xl:h-[20vh] -mt-20 min-h-screen md:justify-start sm:gap-30 justify-center gap-10 w-full md:mt-40 md:-mb-40 pt-20 flex flex-col md:flex-row items-start p-10">
       <span className="xl:text-7xl md:text-5xl text-nowrap text-4xl font-medium relative font-clash text-[#FFFC00]">
         <div className="w-full h-[2px] -bottom-2 bg-white absolute"></div>
         {title}
